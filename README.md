@@ -11,3 +11,6 @@ Blobbing has 3 steps-
                     between R and B.
 After the blob is created, the features are extracted using the caffemodel, which are then used for detection of face.The model has an additional input 
 for confidence level, due to which the model ignores all face detections below that value.
+For executing the code-
+  test image 2 - python3 face_detection.py -i test_pic2.jpg -p deploy.prototxt.txt -m res10_300x300_ssd_iter_140000.caffemodel 
+  test image 1 - python3 face_detection.py -i face_detection/images/AG/00005.png -p deploy.prototxt.txt -m res10_300x300_ssd_iter_140000.caffemodel -c 0.51
