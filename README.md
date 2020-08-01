@@ -14,3 +14,9 @@ for confidence level, due to which the model ignores all face detections below t
 For executing the code-
   test image 2 - python3 face_detection.py -i test_pic2.jpg -p deploy.prototxt.txt -m res10_300x300_ssd_iter_140000.caffemodel 
   test image 1 - python3 face_detection.py -i face_detection/images/AG/00005.png -p deploy.prototxt.txt -m res10_300x300_ssd_iter_140000.caffemodel -c 0.51
+  
+I have added codes for detecting faces from webcam, as well as video files, and improving the fps rate compared to the naive process. For improvement, I have 
+used another separate thread for read() operation of cv2, so that it wont block other operations from happening in the main thread, and hence fps will increase.
+For executing the code-
+  video file code - python3 face_detection_vstream.py -p deploy.prototxt.txt -m res10_300x300_ssd_iter_140000.caffemodel -v Videos/avengers2.mp4
+  webcam video file - python3 fps_improved.py -p deploy.prototxt.txt -m res10_300x300_ssd_iter_140000.caffemodel -d 1
